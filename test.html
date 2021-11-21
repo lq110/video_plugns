@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        iframe {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>测试页面</h1>
+
+    <!-- <iframe id='ifrma' src="http://183.95.190.6:99/webFrame/LoginNewV4.htm" frameborder="0"></iframe> -->
+    <!-- <iframe id='ifrma1' src="http://127.0.0.1:5002/a/webFrame/LoginNewV4.htm" target='ifrma1'></iframe> -->
+    <iframe id='ifrma2' src="http://127.0.0.1:5002/Home/Index" target='ifrma2'></iframe>
+    <!-- <iframe id='iframe3' src="http://127.0.0.1:5002/c/ffp/#/login" frameborder="0"></iframe> -->
+
+
+    <script>
+        // ifrma1.onload = function () {
+        //     let childDoc = ifrma1.contentDocument;
+        //     console.log(childDoc)
+        //     // debugger
+        //     getEle(childDoc, '#email').value = 'chenq';
+        //     getEle(childDoc, '#password').value = 'chenq';
+        //     getEle(childDoc, '#password').nextSibling.nextSibling.click()
+
+        //     // debugger
+
+        // }
+
+        // iframe2
+        ifrma2.onload = function () {
+            let childDoc2 = ifrma2.contentDocument;
+            let childWindow = ifrma2.contentWindow;
+            // debugger 
+
+            // window={
+            //     ...childWindow,
+            //     ...window
+            // }
+            debugger
+            if (childDoc2) {
+                let ele = getEle(childDoc2, 'iframe')
+                let srcStr = ele.getAttribute('src');
+                debugger
+
+                // let [, url] = srcStr.split('97')
+                debugger
+                // ele.src = url;
+                // ele.onload = function () {
+                //     let childEle = ele.contentDocument;
+                //     console.log(childEle)
+                // }
+
+            }
+        }
+
+        //获取元素
+        function getEle(parentEle, selector) {
+            // debugger
+            return parentEle.querySelector(selector)
+        }
+
+        function getEles(parentEle, selector) {
+            // debugger
+            return parentEle.querySelectorAll(selector)
+        }
+
+
+        // iframe3
+        // iframe3.onload = function(){
+        //     let childDoc3 = iframe3.contentDocument;
+        //     let form = getEle(childDoc3,'.el-form')
+            
+        //     form.__vue__.$parent.entity.username = 'sfs001'
+        //     form.__vue__.$parent.entity.password = '123456'
+        //     getEle(form,'button').click()
+        // }
+
+
+
+    </script>
+</body>
+
+</html>

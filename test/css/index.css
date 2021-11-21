@@ -1,0 +1,122 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.playWnd {
+    /* margin: 30px 0 0 400px; */
+    /* position: absolute;
+    top: 300px;
+    left: 200px;
+    width: 1000px; */
+    /*播放容器的宽和高设定*/
+    /* height: 600px; */
+    /* border: 1px solid red; */
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 300px minmax(10px, 1fr);
+}
+
+.left {
+    display: grid;
+    grid-template-rows: minmax(10px, 40px) minmax(1px, 1fr);
+    gap: 10px;
+}
+
+.left>div {
+    border: 1px solid red;
+}
+
+/* tree样式 */
+#TreeList a {
+    height: 32px;
+    /* display: flex;
+    align-items: center; */
+
+}
+
+/* #TreeList li:not(.level2) > span{
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    background: red;
+} */
+
+
+/* 一级图片 */
+.level0 .level0>span:nth-of-type(1) {
+    width: 24px;
+    height: 24px;
+    /* background-image: url('../imgs/icon_01.svg'); */
+    /* background-position: center !important; */
+    vertical-align: middle;
+
+}
+
+/* 第二级图片 */
+.level1 .level1>span:nth-of-type(1) {
+    width: 24px;
+    height: 24px;
+    /* background-image: url('../imgs/icon_02.svg'); */
+    /* background-position: center !important; */
+    vertical-align: middle;
+
+}
+ 
+.level1 .level1>span:nth-of-type(2) {
+    display: inline-block;
+    line-height: 32px;
+
+}
+
+/* 第三级图片 */
+
+
+
+/* 图标 */
+.top01_ico_open,.top01_ico_close {
+    background-image: url('../imgs/icon_01.svg') !important;
+}
+
+.top02_ico_open,.top02_ico_close {
+    background-image: url('../imgs/icon_02.svg') !important;
+}
+
+/* 视频头 */
+.videoIcon_ico_docu {
+    background-image: url('../imgs/icon_03.svg') !important;
+    background-size: contain;
+    background-position: center;
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.ztree li a{
+    display: inline-flex;
+    align-items: center;
+}
+.ztree li a.curSelectedNode {
+    width: 94%;
+    border: none;
+    background-color: none;
+    position: relative;
+    color: #fff;
+}
+
+.ztree li a >span:nth-of-type(2){
+   margin-left: 8px;
+}
+.curSelectedNode::before{
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: red;
+    z-index: -1;
+    
+}
